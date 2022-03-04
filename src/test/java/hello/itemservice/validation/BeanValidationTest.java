@@ -16,10 +16,10 @@ public class BeanValidationTest {
         ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
         Validator validator = factory.getValidator();
 
-        Item item = new Item("", 1000, 2);
+        Item item = new Item(" ", null, 10000);
         Set<ConstraintViolation<Item>> violations = validator.validate(item);
-
         for (ConstraintViolation<Item> violation : violations) {
+
             System.out.println("violation = " + violation);
             System.out.println("violation.getMessage() = " + violation.getMessage());
         }
